@@ -35,7 +35,7 @@ public class SecurityConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("https://videogames-java.vercel.app") // tu frontend
-                        .allowedOrigins("http://localhost:3000") // tu frontend
+                        //.allowedOrigins("http://localhost:3000") // tu frontend
                         .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
