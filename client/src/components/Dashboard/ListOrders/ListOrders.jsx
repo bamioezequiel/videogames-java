@@ -38,14 +38,9 @@ export default function ListOrders() {
       cancelButtonColor: "#3085d6",
       confirmButtonText: "Sí, eliminar"
     });
-
     if (result.isConfirmed) {
-      try {
-        await dispatch(deleteOrder(id));
-        toast.success("Orden eliminada correctamente");
-      } catch (error) {
-        toast.error("Error al eliminar la orden");
-      }
+      try { await dispatch(deleteOrder(id)); toast.success("Orden eliminada correctamente"); }
+      catch { toast.error("Error al eliminar la orden"); }
     }
   };
 
@@ -60,20 +55,13 @@ export default function ListOrders() {
       cancelButtonColor: "#d33",
       confirmButtonText: "Sí, cambiar"
     });
-
     if (result.isConfirmed) {
-      try {
-        await dispatch(updateOrderStatus(id, newStatus));
-        toast.success(`Estado actualizado a ${translateStatus(newStatus)}`);
-      } catch (error) {
-        toast.error("Error al actualizar estado");
-      }
+      try { await dispatch(updateOrderStatus(id, newStatus)); toast.success(`Estado actualizado a ${translateStatus(newStatus)}`); }
+      catch { toast.error("Error al actualizar estado"); }
     }
   };
 
-  const handleFilterChange = (e) => {
-    setFilters({ ...filters, [e.target.name]: e.target.value });
-  };
+  const handleFilterChange = (e) => setFilters({ ...filters, [e.target.name]: e.target.value });
 
   const filteredOrders = orders?.filter((o) => {
     const createdDate = o.createdAt ? o.createdAt.split("T")[0] : "";
@@ -117,11 +105,11 @@ export default function ListOrders() {
               const date = o.createdAt ? o.createdAt.split("T") : ["", ""];
               return (
                 <tr key={o.id}>
-                  <td>{o.id}</td>
-                  <td>{o.userId}</td>
-                  <td>{date[0]} {date[1] ? date[1].split(".")[0] : ""}</td>
-                  <td>${o.total.toFixed(2)}</td>
-                  <td>
+                  <td data-label="Id">{o.id}</td>
+                  <td data-label="User">{o.userId}</td>
+                  <td data-label="Date">{date[0]} {date[1] ? date[1].split(".")[0] : ""}</td>
+                  <td data-label="Total">${o.total.toFixed(2)}</td>
+                  <td data-label="Status">
                     <span className={
                       o.status === "PAID" ? tableStyles.status_paid :
                       o.status === "CANCELLED" ? tableStyles.status_cancelled :
@@ -130,7 +118,7 @@ export default function ListOrders() {
                       {translateStatus(o.status)}
                     </span>
                   </td>
-                  <td>
+                  <td data-label="Acciones">
                     <button className={tableStyles.viewBtn} onClick={() => navigate(`/orders/${o.id}`)} title="Ver detalle"><FaEye /></button>
                     <button className={tableStyles.editBtn} onClick={() => handleStatusChange(o.id, o.status)} title="Cambiar estado"><AiFillEdit /></button>
                     <button className={tableStyles.deleteBtn} onClick={() => handleDelete(o.id)} title="Eliminar orden"><MdDelete /></button>

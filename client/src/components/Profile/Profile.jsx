@@ -50,7 +50,8 @@ export default function Profile() {
       <div className={profileStyles.profile_content}>
         <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
             <UserCard />
-          </div>
+        </div>
+
         {/* Barra de navegación */}
         <nav className={profileStyles.profile_nav}>
           {isAdmin && (
@@ -66,107 +67,64 @@ export default function Profile() {
         {/* Órdenes */}
         <section>
           <h3>Mis órdenes</h3>
-          <table className={tableStyles.fl_table}>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Estado</th>
-                <th>Total</th>
-                <th>Cantidad de items</th>
-                <th>Fecha</th>
-                <th>Acción</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders?.length > 0 ? (
-                orders.map((order) => (
-                  <tr key={order.id}>
-                    <td>{order.id}</td>
-                    <td>
-                      <span
-                        className={
-                          order.status === "PAID"
-                            ? tableStyles.status_paid
-                            : order.status === "CANCELLED"
-                            ? tableStyles.status_cancelled
-                            : tableStyles.status_pending
-                        }
-                      >
-                        {order.status === "PAID"
-                          ? "Pagado"
-                          : order.status === "CANCELLED"
-                          ? "Cancelado"
-                          : "Pendiente"}
-                      </span>
-                    </td>
-                    <td>${order.total.toFixed(2)}</td>
-                    <td>{order.gameIds?.length}</td>
-                    <td>{new Date(order.createdAt).toLocaleDateString()}</td>
-                    <td>
-                      <button
-                        className={tableStyles.viewBtn}
-                        onClick={() => handleViewOrder(order.id)}
-                      >
-                        Ver detalles
-                      </button>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan={6} className={tableStyles.noItems}>
-                    No hay órdenes registradas
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </section>
-
-        {/* Usuarios (solo admin) */}
-        {isAdmin && allUsers?.length > 0 && (
-          <section>
-            <h3>Usuarios registrados</h3>
+          <div className={tableStyles.table_wrapper}>
             <table className={tableStyles.fl_table}>
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Email</th>
-                  <th>Rol</th>
+                  <th>Estado</th>
+                  <th>Total</th>
+                  <th>Cantidad de items</th>
+                  <th>Fecha</th>
                   <th>Acción</th>
                 </tr>
               </thead>
               <tbody>
-                {allUsers.map((u) => (
-                  <tr key={u.id}>
-                    <td>{u.id}</td>
-                    <td>{u.name}</td>
-                    <td>{u.email}</td>
-                    <td>{u.role}</td>
-                    <td>
-                      <button
-                        className={
-                          u.role === "admin"
-                            ? tableStyles.inactiveBtn
-                            : tableStyles.activeBtn
-                        }
-                        onClick={() =>
-                          handleChangeRole(
-                            u.id,
-                            u.role === "admin" ? "user" : "admin"
-                          )
-                        }
-                      >
-                        {u.role === "admin" ? "Quitar admin" : "Hacer admin"}
-                      </button>
+                {orders?.length > 0 ? (
+                  orders.map((order) => (
+                    <tr key={order.id}>
+                      <td data-label="ID">{order.id}</td>
+                      <td data-label="Estado">
+                        <span
+                          className={
+                            order.status === "PAID"
+                              ? tableStyles.status_paid
+                              : order.status === "CANCELLED"
+                              ? tableStyles.status_cancelled
+                              : tableStyles.status_pending
+                          }
+                        >
+                          {order.status === "PAID"
+                            ? "Pagado"
+                            : order.status === "CANCELLED"
+                            ? "Cancelado"
+                            : "Pendiente"}
+                        </span>
+                      </td>
+                      <td data-label="Total">${order.total.toFixed(2)}</td>
+                      <td data-label="Cantidad de items">{order.gameIds?.length}</td>
+                      <td data-label="Fecha">{new Date(order.createdAt).toLocaleDateString()}</td>
+                      <td data-label="Acción">
+                        <button
+                          className={tableStyles.viewBtn}
+                          onClick={() => handleViewOrder(order.id)}
+                        >
+                          Ver detalles
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={6} className={tableStyles.noItems}>
+                      No hay órdenes registradas
                     </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
-          </section>
-        )}
+          </div>
+        </section>        
       </div>
     </div>
   );

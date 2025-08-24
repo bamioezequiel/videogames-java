@@ -45,7 +45,7 @@ export default function ListGames() {
         await dispatch(deleteGame(id));
         await dispatch(getAllGames());
         toast.success("Juego eliminado correctamente");
-      } catch (error) {
+      } catch {
         toast.error("Error al eliminar el juego");
       }
     }
@@ -72,7 +72,7 @@ export default function ListGames() {
         await dispatch(updateGame(game.id, updatedGame));
         await dispatch(getAllGames());
         toast.success(`${label} actualizado correctamente`);
-      } catch (error) {
+      } catch {
         toast.error(`Error al actualizar ${label}`);
       }
     }
@@ -82,7 +82,7 @@ export default function ListGames() {
     <div className={tableStyles.table_container}>
       <AdminNav />
       <ToastContainer />
-      
+
       <div className={tableStyles.table_wrapper}>
         <table className={tableStyles.fl_table}>
           <thead>
@@ -101,48 +101,46 @@ export default function ListGames() {
             </tr>
           </thead>
           <tbody>
-            {games?.length > 0 ? (
-              games.map((g) => (
-                <tr key={g.id}>
-                  <td>{g.id}</td>
-                  <td>{g.name}</td>
-                  <td>{g.released}</td>
-                  <td>{g.rating}</td>
-                  <td>${g.price}</td>
-                  <td>{g.onSale}%</td>
-                  <td>
-                    <button
-                      onClick={(e) => toggleStatus(e, g, "featured")}
-                      className={g.featured ? tableStyles.activeBtn : tableStyles.inactiveBtn}
-                    >
-                      {g.featured ? "Sí" : "No"}
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      onClick={(e) => toggleStatus(e, g, "new")}
-                      className={g.new ? tableStyles.activeBtn : tableStyles.inactiveBtn}
-                    >
-                      {g.new ? "Sí" : "No"}
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      onClick={(e) => toggleStatus(e, g, "active")}
-                      className={g.active ? tableStyles.activeBtn : tableStyles.inactiveBtn}
-                    >
-                      {g.active ? "Sí" : "No"}
-                    </button>
-                  </td>
-                  <td>
-                    <button className={tableStyles.editBtn}> <AiFillEdit /> </button>
-                  </td>
-                  <td>
-                    <button className={tableStyles.deleteBtn} onClick={(e) => handleDelete(e, g.id)}> <MdDelete /> </button>
-                  </td>
-                </tr>
-              ))
-            ) : (
+            {games?.length > 0 ? games.map((g) => (
+              <tr key={g.id}>
+                <td data-label="Id">{g.id}</td>
+                <td data-label="Nombre">{g.name}</td>
+                <td data-label="Lanzamiento">{g.released}</td>
+                <td data-label="Rating">{g.rating}</td>
+                <td data-label="Precio">${g.price}</td>
+                <td data-label="Descuento">{g.onSale}%</td>
+                <td data-label="Destacado">
+                  <button
+                    onClick={(e) => toggleStatus(e, g, "featured")}
+                    className={g.featured ? tableStyles.activeBtn : tableStyles.inactiveBtn}
+                  >
+                    {g.featured ? "Sí" : "No"}
+                  </button>
+                </td>
+                <td data-label="Nuevo">
+                  <button
+                    onClick={(e) => toggleStatus(e, g, "new")}
+                    className={g.new ? tableStyles.activeBtn : tableStyles.inactiveBtn}
+                  >
+                    {g.new ? "Sí" : "No"}
+                  </button>
+                </td>
+                <td data-label="Activo">
+                  <button
+                    onClick={(e) => toggleStatus(e, g, "active")}
+                    className={g.active ? tableStyles.activeBtn : tableStyles.inactiveBtn}
+                  >
+                    {g.active ? "Sí" : "No"}
+                  </button>
+                </td>
+                <td data-label="Editar">
+                  <button className={tableStyles.editBtn}><AiFillEdit /></button>
+                </td>
+                <td data-label="Eliminar">
+                  <button className={tableStyles.deleteBtn} onClick={(e) => handleDelete(e, g.id)}><MdDelete /></button>
+                </td>
+              </tr>
+            )) : (
               <tr>
                 <td colSpan="11" className={tableStyles.noItems}>
                   No se encontraron juegos.

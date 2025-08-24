@@ -137,22 +137,74 @@
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* Adaptación a móviles */
+/* Adaptación general a móviles y tablets */
 @media (max-width: 768px) {
+  /* Filtros de tienda: columna y ancho completo */
   .store_filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .store_filter select,
+  .store_filter button {
+    min-width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  /* Lista de juegos: apilar en una columna con margen */
+  .store_list {
+    justify-content: center;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  /* Paginación y selector de vista: columna y ancho completo */
+  .store_pagination_view_container {
     flex-direction: column;
     align-items: center;
     gap: 12px;
   }
 
-  .store_filter select,
-  .store_filter button {
-    min-width: 90%;
+  .viewContainer {
+    width: 100%;
+    justify-content: space-between;
   }
 
-  .store_pagination_view_container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+  .store_pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 6px;
   }
+
+  .store_pagination button {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Adaptación a móviles muy pequeños */
+@media (max-width: 480px) {
+  .store_filter select,
+  .store_filter button {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+  .store_list {
+    gap: 10px;
+  }
+
+  .store_pagination button {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Si tienes nav fijo en la parte superior */
+body {
+  padding-top: 60px; /* Ajusta según la altura real de tu nav */
 }

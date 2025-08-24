@@ -157,7 +157,7 @@
   font-style: italic;
 }
 
-/* Filtros (ListOrders) */
+/* Filtros */
 .filters {
   width: 100%;
   display: flex;
@@ -178,4 +178,45 @@
   outline: none;
   border-color: var(--color-blue);
   box-shadow: 0 0 5px rgba(52,152,219,0.4);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .fl_table, .fl_table thead, .fl_table tbody, .fl_table th, .fl_table td, .fl_table tr {
+    display: block;
+  }
+
+  .fl_table thead tr {
+    display: none;
+  }
+
+  .fl_table tr {
+    margin-bottom: 15px;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .fl_table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid var(--color-light-gray);
+  }
+
+  .fl_table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: calc(50% - 20px);
+    padding-right: 10px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+  }
+
+  .fl_table td:last-child {
+    border-bottom: 0;
+  }
 }

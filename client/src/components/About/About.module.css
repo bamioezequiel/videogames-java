@@ -6,8 +6,10 @@
   background-color: #fff; /* Fondo blanco */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #111;
+  box-sizing: border-box;
 }
 
+/* Título de secciones */
 .section_title {
   font-size: 2rem;
   display: flex;
@@ -22,6 +24,7 @@
   margin-bottom: 15px;
 }
 
+/* Redes sociales */
 .socials {
   display: flex;
   gap: 15px;
@@ -54,6 +57,7 @@
   font-weight: 600;
 }
 
+/* Contacto */
 .contact_section {
   margin-top: 50px;
 }
@@ -76,6 +80,7 @@
   font-size: 1rem;
   outline: none;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .contact_input:focus,
@@ -103,4 +108,64 @@
 .contact_btn:hover {
   background-color: #e67600;
   transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .about_container {
+    padding: 25px 15px;
+  }
+  .section_title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_container {
+    padding: 20px 15px 100px; /* espacio extra abajo para nav móvil */
+  }
+  .section_title {
+    font-size: 1.5rem;
+  }
+  .about_text,
+  .contact_text {
+    font-size: 0.95rem;
+  }
+  .social_icon {
+    font-size: 1.3rem;
+  }
+  .contact_input,
+  .contact_textarea {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+  .contact_btn {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about_container {
+    padding: 15px 10px 120px; /* más espacio para nav móvil */
+  }
+  .section_title {
+    font-size: 1.3rem;
+  }
+  .about_text,
+  .contact_text {
+    font-size: 0.9rem;
+  }
+  .social_icon {
+    font-size: 1.2rem;
+  }
+  .contact_input,
+  .contact_textarea {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  .contact_btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
 }

@@ -1,27 +1,55 @@
+/* Contenedor principal */
 .container-app {
   overflow-x: hidden;
-  /* display: flex; */
-  
+  width: 100%;
 }
 
+/* Contenido principal */
 .content-app {
   width: 94.6vw;
   margin-left: 4.5vw;
+  transition: all 0.3s ease;
 }
 
+/* Selección de texto */
 ::selection {
   background-color: var(--main-color);
-  color: var(--color-black)
+  color: var(--color-black);
 }
 
+/* Scroll personalizado */
 ::-webkit-scrollbar {
   width: 15px;
   background-color: var(--color-gray);
 }
+
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(234, 234, 234, 0.3);
   background-color: var(--color-gray);
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: var(--main-color);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .content-app {
+    width: 95vw;
+    margin-left: 2.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-app {
+    width: 96vw;
+    margin-left: 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-app {
+    width: 98vw;
+    margin-left: 1%;
+  }
 }

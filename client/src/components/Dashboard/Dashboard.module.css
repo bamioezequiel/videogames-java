@@ -109,3 +109,30 @@ hr {
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   margin: 10px 0;
 }
+
+@media (max-width: 1024px) {
+  .dashboard_stats_item {
+    width: 45%;
+    height: 18vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard_stats_item {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .dashboard_stats_container {
+    gap: 15px;
+  }
+
+  .dashboard_welcome h2 {
+    font-size: 26px;
+  }
+
+  .dashboard_welcome p {
+    font-size: 16px;
+  }
+}

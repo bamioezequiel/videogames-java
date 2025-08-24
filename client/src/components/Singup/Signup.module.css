@@ -1,31 +1,38 @@
-
+/* --- CONTENEDOR PRINCIPAL --- */
 .signup_container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 90vh;
   background-color: var(--color-white);
+  padding: 0 10px; /* evita que toque bordes en móviles */
+  box-sizing: border-box;
+  margin: 0;
 }
 
+/* --- CONTENIDO DEL SIGNUP --- */
 .signup_content {
   background-color: var(--color-white);
   border-radius: 12px;
   width: 400px;
-  max-width: 90%;
+  max-width: 100%;
   padding: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: fadeIn 0.5s ease-in-out;
+  box-sizing: border-box;
 }
 
+/* --- ANIMACIÓN --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- TÍTULOS --- */
 .signup_title {
   font-size: 1.8rem;
   color: var(--main-color);
@@ -41,6 +48,7 @@
   text-align: center;
 }
 
+/* --- FORMULARIO --- */
 .signup_form {
   width: 100%;
   display: flex;
@@ -70,6 +78,7 @@
   font-size: 0.95rem;
   transition: all 0.3s;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .signup_form_input:focus {
@@ -114,6 +123,7 @@
   color: var(--main-color);
 }
 
+/* --- BOTONES --- */
 .signup_btn {
   background-color: var(--main-color);
   color: var(--color-white);
@@ -161,4 +171,48 @@
   background-color: var(--color-gray);
   margin: 20px 0;
   border: none;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .signup_content {
+    width: 80%;
+    padding: 25px;
+  }
+  .signup_title { font-size: 1.6rem; }
+  .signup_subtitle { font-size: 0.9rem; }
+  .signup_form_input { font-size: 0.9rem; padding: 10px 12px; }
+  .signup_btn { font-size: 0.95rem; padding: 10px; }
+  .show_password_btn { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+  .signup_container {
+    min-height: auto;
+    padding-top: 80px; /* espacio nav top */
+    padding-bottom: 80px; /* espacio nav bottom */
+  }
+  .signup_content {
+    width: 90%;
+    padding: 20px;
+  }
+  .signup_title { font-size: 1.4rem; }
+  .signup_subtitle { font-size: 0.85rem; }
+  .signup_form_input { font-size: 0.85rem; padding: 10px; }
+  .signup_btn { font-size: 0.9rem; padding: 8px; }
+  .show_password_btn { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .signup_content {
+    width: 95%;
+    padding: 15px;
+  }
+  .signup_title { font-size: 1.3rem; }
+  .signup_subtitle { font-size: 0.8rem; }
+  .signup_form_input { font-size: 0.8rem; padding: 8px 10px; }
+  .signup_btn { font-size: 0.85rem; padding: 6px; }
+  .signup_btn_without_background,
+  .signup_link { font-size: 0.75rem; }
+  .show_password_btn { font-size: 0.95rem; }
 }

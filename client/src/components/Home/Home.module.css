@@ -1,73 +1,101 @@
-/* Contenedor principal */
+/* --- HOME --- */
 .home_container {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
   background-color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #222;
-  padding: 0 10px; /* espacio lateral en móvil */
+  padding: 0 10px;
 }
-
-/* Contenido principal */
 .home_content {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 20px 0;
+  padding: 40px 20px;
 }
 
-/* Contenedor de los juegos destacados */
-.home_content > div {
-  display: flex;
-  flex-direction: row;
+/* --- WRAPPER DESTACADO + SECUNDARIOS --- */
+.featured_wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: auto;
   gap: 20px;
-  flex-wrap: wrap;
+  align-items: start;
+}
+
+/* Destacado ocupa toda la fila izquierda */
+.featured_wrapper > *:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+
+/* Secundarios apilados en la columna derecha */
+.secondary_games {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.secondary_games a {
+  display: flex;
   justify-content: center;
 }
-
-/* Separación entre cards */
-.home_content > div > * {
-  margin-bottom: 20px;
+/* Home.module.css u otro contenedor principal */
+.main_content {
+    padding-left: 5vw; /* igual al ancho del nav */
 }
 
+@media (max-width: 768px) {
+    .main_content {
+        padding-left: 0;
+        padding-bottom: 60px; /* espacio para nav bottom */
+    }
+}
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
-  .home_content {
-    gap: 25px;
-    padding: 15px 0;
+  .featured_wrapper {
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
   }
-  .home_content > div {
+
+  .secondary_games {
     gap: 15px;
   }
 }
 
 @media (max-width: 768px) {
-  .home_content {
+  .featured_wrapper {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 10px 0;
+    padding: 0 10px;
   }
 
-  .home_content > div {
+  .secondary_games {
     flex-direction: column;
-    width: 100%;
-    align-items: center;
     gap: 15px;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  .home_container {
+    padding: 0 5px;
+  }
+
   .home_content {
     gap: 15px;
   }
 
-  .home_content > div {
-    width: 100%;
+  .featured_wrapper {
+    gap: 15px;
+  }
+
+  .secondary_games {
     gap: 10px;
   }
 }
