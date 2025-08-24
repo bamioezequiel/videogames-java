@@ -26,6 +26,21 @@
   }
 
   .header_logo {
-    height: 50px;
+    height: 120px; 
+    max-width: 90%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .header_container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+  }
+
+  .header_logo {
+    height: 100px; /* visible y proporcional */
+    max-width: 90%;
   }
 }

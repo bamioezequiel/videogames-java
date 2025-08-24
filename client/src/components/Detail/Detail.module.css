@@ -233,45 +233,102 @@
   background-position: center;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* --- RESPONSIVE DETALLES --- */
+@media (max-width: 480px) {
+  .detail_container {
+    width: 95%;
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .topLineDetail {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .returnBtn {
+    font-size: 1rem;
+  }
+
   .detail_content {
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
   }
 
-  .details_card_images,
-  .detail_content_right {
+  .details_card_images {
     width: 100%;
-    margin-left: 0;
   }
 
   .detail_main_image {
-    height: 350px;
+    height: 220px;
   }
 
-  .detail_btn {
-    width: 80%;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .detail_main_image {
-    height: 300px;
+  .details_images_container {
+    justify-content: center;
+    gap: 8px;
   }
 
   .details_image {
-    width: 25%;
-    height: 60px;
+    width: 30%;
+    height: 50px;
+  }
+
+  .detail_content_right {
+    width: 100%;
+    gap: 15px;
   }
 
   .nameGameDetail {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .priceGameDetail,
   .salePrice {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .oldPrice {
+    font-size: 1rem;
+  }
+
+  .saleBadge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  .detailInfoNonImp {
+    font-size: 0.9rem;
+    gap: 12px;
+  }
+
+  .detailDescriptionBox {
+    font-size: 0.9rem;
+    max-height: 180px;
+    padding: 10px;
+  }
+
+  .ratingGameDetail {
+    font-size: 1rem;
+  }
+
+  .detail_btn_container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .detail_btn {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 1rem;
+  }
+
+  .allTags {
+    gap: 6px;
+  }
+
+  .detail_tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
   }
 }
