@@ -119,13 +119,5 @@ Pasarela de pagos real (Stripe, MercadoPago)
 Autorización por roles (Admin / User)
 
 👨‍💻 Autor
-Proyecto desarrollado por Ezequiel Bamio
-Desarrollador Fullstack orientado al Backend (Java + Spring Boot + React)
+Proyecto desarrollado por Ezequiel Bamiontado al Backend (Java + Spring Boot + React)
 
-yaml
-Copiar
-Editar
-
----
-
-👉 ¿Querés que te arme también un **Docker Compose** para que con un solo comando levantes `backend + Mongo + frontend`? Eso quedaría muy pro para tu portfolio.
