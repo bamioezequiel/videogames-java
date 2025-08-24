@@ -143,7 +143,13 @@ export default function Detail() {
             <div className={s.detail_btn_container}>
               <button
                 className={s.detail_btn}
-                onClick={() => toggleCartItem(detailGame)}
+                onClick={() => {
+                  if (!isAuth) {
+                    navigate("/login"); 
+                  } else {
+                    toggleCartItem(detailGame); 
+                  }
+                }}
               >
                 {isInCart(detailGame.id) ? "Eliminar del carrito" : "Agregar al carrito"}
               </button>

@@ -52,6 +52,11 @@ function App() {
       try {
         setLoading(true);
 
+        // Si no hay usuario logueado, limpiar carrito localStorage
+        if (!isAuth && localStorage.getItem("cart")) {
+          localStorage.removeItem("cart");
+        }
+
         // Cargar datos generales
         await Promise.all([
           dispatch(getGames()),
@@ -60,10 +65,6 @@ function App() {
           dispatch(getTags()),
         ]);
 
-        // Cargar carrito solo si hay usuario logueado
-        if (isAuth && user?._id) {
-          await dispatch(getCart(user._id));
-        }
 
       } catch (error) {
         console.error("Error al cargar datos iniciales:", error);
@@ -75,6 +76,7 @@ function App() {
 
     fetchData();
   }, [dispatch, isAuth, user, setLoading, initialized]);
+
 
   // Mientras inicializa el AuthContext mostramos loading
   if (!initialized) {
