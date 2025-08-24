@@ -1,3 +1,4 @@
+
 .nav_container {
     width: 5vw;
     min-width: 60px;
@@ -20,6 +21,9 @@
     width: 6vw;
 }
 
+
+
+
 .nav_menu {
     display: flex;
     flex-direction: column;
@@ -32,19 +36,18 @@
 .nav_menu_col2 {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav_menu_item {
-    position: relative;
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  position: relative;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .nav_menu_item:hover {
@@ -77,5 +80,78 @@
   font-size: 12px;
 }
 
-.item_amount:hover {
+/* --- RESPONSIVE STYLES (TABLET AND MOBILE) --- */
+@media (max-width: 768px) {
+  .nav_container {
+    width: 100%;
+    min-width: unset;
+    height: 60px;
+  }
+
+  .nav {
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav:hover {
+    width: 100%;
+  }
+
+  .nav_menu {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+  }
+
+  .nav_menu_col1,
+    .nav_menu_col2 {
+     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+  .nav_menu_item {
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav_menu_image_profile {
+    width: 32px;
+    height: 32px;
+  }
+
+  .item_amount {
+    top: -5px;
+    right: -5px;
+    font-size: 11px;
+  }
+}
+
+/* --- EXTRA: FOR VERY SMALL MOBILE DEVICES --- */
+@media (max-width: 480px) {
+  .nav_menu_item {
+    font-size: 1rem;
+  }
+
+  .nav_menu_image_profile {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav_menu_group {
+    gap: 10px;
+  }
 }
