@@ -38,7 +38,7 @@ import OrderDetail from "./components/OrderDetail/OrderDetail";
 import NotFound from "./components/NotFound/NotFound";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
 
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = "https://videogames-java.onrender.com";
 
 function App() {
   const dispatch = useDispatch();
