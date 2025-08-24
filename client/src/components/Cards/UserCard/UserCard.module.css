@@ -1,0 +1,175 @@
+/* Contenedor general de la tarjeta */
+.profile_card {
+  width: 100%;
+  max-width: 450px;
+  background-color: #ffffff;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.profile_card:hover {
+  transform: translateY(-3px);
+}
+
+/* Imagen de perfil */
+.profile_image_upload_wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #ffb84d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Datos del usuario */
+.profile_card_data {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile_card_data h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222222;
+  margin: 0;
+}
+
+/* Rol */
+.profile_card_rol {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.adminRole {
+  background-color: #ffb84d;
+  color: #222222;
+}
+
+.userRole {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+/* Contenedor de campos */
+.profile_card_data_content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile_card_fields {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile_card_fields label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile_card_fields input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  color: #222;
+  background-color: #f9f9f9;
+}
+
+.profile_card_fields input:focus {
+  outline: none;
+  border-color: #ffb84d;
+  box-shadow: 0 0 8px rgba(255, 184, 77, 0.4);
+  transform: scale(1.02);
+}
+
+/* Texto de error */
+.error_text {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  height: 16px;
+}
+
+/* Botones */
+.profile_card_buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.profile_card_btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.profile_card_btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Botones sólidos por tipo */
+.profile_card_btn {
+  background-color: #ffb84d;
+  color: #222;
+}
+
+.cancel_btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.profile_card_btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .profile_card {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .profile_image_upload_wrap {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile_card_data {
+    width: 100%;
+    align-items: center;
+  }
+
+  .profile_card_data_content {
+    width: 100%;
+  }
+
+  .profile_card_buttons {
+    justify-content: center;
+  }
+}

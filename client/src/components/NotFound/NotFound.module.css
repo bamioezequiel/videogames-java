@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-white);
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.08);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.code {
+  font-size: 72px;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 48px;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 18px;
+  color: var(--color-black);
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: var(--main-color);
+  color: var(--color-white);
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--main-color);
+  transform: scale(1.05);
+}

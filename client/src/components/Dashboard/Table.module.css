@@ -1,0 +1,181 @@
+/* Contenedor general de tabla */
+.table_container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Wrapper para scroll horizontal */
+.table_wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  background-color: var(--color-white);
+  padding: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Tabla principal */
+.fl_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+}
+
+.fl_table th, .fl_table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.fl_table th {
+  background: var(--main-color);
+  color: var(--color-black);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fl_table th:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(255, 166, 50);
+}
+
+.fl_table tr:nth-child(even) {
+  background-color: var(--color-light-gray);
+}
+
+.fl_table tr:hover {
+  background-color: lch(83.21% 84.73 86.12 / 0.1);
+  box-shadow: inset 0 0 10px rgba(255,200,0,0.2);
+}
+
+/* Botones principales */
+.button, .editBtn, .deleteBtn, .viewBtn, .activeBtn, .inactiveBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Botones de rol o estado ON/OFF */
+.activeBtn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: var(--color-white);
+}
+
+.activeBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 12px #2ecc71;
+}
+
+.inactiveBtn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: var(--color-white);
+}
+
+.inactiveBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 12px #e74c3c;
+}
+
+/* Botones de acciones */
+.editBtn {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  color: var(--color-black);
+}
+
+.editBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 10px #f1c40f;
+}
+
+.deleteBtn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: var(--color-white);
+}
+
+.deleteBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+.viewBtn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: var(--color-white);
+}
+
+.viewBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 10px #3498db;
+}
+
+/* Estados de órdenes */
+.status_paid {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.status_pending {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.status_cancelled {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Mensajes de tabla vacía */
+.noItems {
+  padding: 20px;
+  text-align: center;
+  color: var(--color-gray);
+  font-style: italic;
+}
+
+/* Filtros (ListOrders) */
+.filters {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filters input, .filters select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--color-light-gray);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.filters input:focus, .filters select:focus {
+  outline: none;
+  border-color: var(--color-blue);
+  box-shadow: 0 0 5px rgba(52,152,219,0.4);
+}

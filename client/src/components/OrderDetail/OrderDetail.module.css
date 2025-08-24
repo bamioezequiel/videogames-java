@@ -1,0 +1,205 @@
+/* Contenedor general */
+.orderDetail_container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px 30px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header h2 {
+  color: #222;
+  font-size: 28px;
+}
+
+.backBtn {
+  background-color: #ffb84d;
+  color: #222;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #ffb84d40;
+}
+
+.backBtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 12px #ffb84d80, 0 6px 18px rgba(255,184,77,0.4);
+}
+
+/* Resumen de orden */
+.order_summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary_item {
+  background-color: #f9f9f9;
+  padding: 12px 20px;
+  border-radius: 12px;
+  flex: 1 1 200px;
+  font-size: 15px;
+  color: #222;
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent;
+}
+
+.summary_item:hover {
+  transform: translateY(-2px);
+  border-left-color: #ffb84d;
+}
+
+/* Estados */
+.status_paid {
+  color: #28a745;
+  font-weight: 700;
+}
+
+.status_cancelled {
+  color: #ff4d4d;
+  font-weight: 700;
+}
+
+.status_pending {
+  color: #ffb84d;
+  font-weight: 700;
+}
+
+/* Título juegos */
+h3 {
+  color: #222;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Grid de juegos */
+.items_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Card de cada juego */
+.item_card {
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.item_card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: var(--main-color);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.item_card:hover::before {
+  opacity: 0.9;
+}
+
+.item_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255,184,77,0.3);
+  border-color: #ffb84d;
+}
+
+.item_image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  z-index: 1;
+  position: relative;
+}
+
+.item_info {
+  padding: 12px 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.item_info h4 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.item_info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Precios */
+.salePrice {
+  color: #222;
+  font-weight: 700;
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+
+.item_card:hover .salePrice {
+  transform: scale(1.05);
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+}
+
+/* Géneros */
+.genreTag {
+  display: inline-block;
+  background-color: #ffb84d20;
+  color: #ffb84d;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 6px;
+  transition: all 0.3s;
+}
+
+.item_card:hover .genreTag {
+  background-color: #ffb84d40;
+  color: #222;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .order_summary {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .item_image {
+    height: 180px;
+  }
+}

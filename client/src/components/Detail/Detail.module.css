@@ -1,0 +1,277 @@
+/* Contenedor principal */
+.detail_container {
+  width: 95%;
+  max-width: 1400px;
+  min-height: 80vh;
+  padding: 30px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22), 0 20px 60px rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  overflow: hidden;
+}
+
+/* Línea superior con botón de retorno */
+.topLineDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.returnBtn {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #212121;
+  transition: all 0.25s ease;
+}
+
+.returnBtn:hover {
+  color: var(--main-color);
+}
+
+/* Contenido principal */
+.detail_content {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* Panel izquierdo: imágenes */
+.details_card_images {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail_main_image {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detail_main_image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Miniaturas de imágenes */
+.details_images_container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.details_image {
+  width: 120px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.details_image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Panel derecho: información */
+.detail_content_right {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.titleDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nameGameDetail {
+  font-size: 3rem;
+  font-family: var(--font-family-h);
+  font-weight: 700;
+  color: #212121;
+}
+
+.priceGameDetail {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.salePrice {
+  color: var(--main-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #777;
+  font-size: 1.6rem;
+}
+
+.saleBadge {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+/* Información y descripción con mejor legibilidad */
+.detailInfoNonImp {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #212121;
+}
+
+.detailRating,
+.detailRelease {
+  font-size: 1.1rem;
+}
+
+.detailDescriptionBox {
+  max-height: 250px; /* Ajusta según convenga */
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  padding: 12px 15px;
+  border-radius: 14px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Scroll interno más agradable */
+.detailDescriptionBox::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detailDescriptionBox::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+
+/* Rating */
+.ratingGameDetail {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+/* Botones */
+.detail_btn_container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.detail_btn {
+  background-color: transparent;
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #212121;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.detail_btn:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  box-shadow: 0 12px 16px rgba(0,0,0,0.24), 0 17px 50px rgba(0,0,0,0.19);
+}
+
+/* Tags, plataformas y géneros */
+.allTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.detail_tag {
+  text-align: center;
+  background-color: var(--color-black);
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.85rem;
+}
+
+/* Fondo principal */
+.detail_background {
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .detail_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details_card_images,
+  .detail_content_right {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .detail_main_image {
+    height: 350px;
+  }
+
+  .detail_btn {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail_main_image {
+    height: 300px;
+  }
+
+  .details_image {
+    width: 25%;
+    height: 60px;
+  }
+
+  .nameGameDetail {
+    font-size: 2rem;
+  }
+
+  .priceGameDetail,
+  .salePrice {
+    font-size: 1.5rem;
+  }
+}

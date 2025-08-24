@@ -1,0 +1,132 @@
+.paymentForm {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  background: var(--color-white);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.paymentTitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.paymentTotal {
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.inputGroup,
+.inputGroupSmall {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputField,
+.inputFieldSmall {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.inputFieldSmall {
+  padding-left: 35px;
+}
+
+.inputField:focus,
+.inputFieldSmall:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 5px rgba(255, 169, 50, 0.4);
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+}
+
+.paymentBtn {
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--main-color), #ffb84d);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 169, 50, 0.3);
+}
+
+.paymentBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 169, 50, 0.5);
+}
+
+/* Progress bar dentro de SweetAlert */
+.progressBarContainer {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.progressBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--main-color), #ffb84d);
+  transition: width 0.1s linear;
+  border-radius: 8px;
+}
+
+/* Contenedor de productos dentro de la alerta */
+.productsContainer {
+  max-height: 150px;
+  overflow-y: auto;
+  background: var(--color-white);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .paymentForm {
+    margin: 30px 20px;
+    padding: 25px 20px;
+  }
+  .inputRow {
+    flex-direction: column;
+  }
+}

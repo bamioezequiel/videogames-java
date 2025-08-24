@@ -1,0 +1,42 @@
+.billboard_container {
+  width: 100%;
+}
+
+.billboard_title {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  margin: auto;
+}
+
+.billboard_btn {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-black);
+  background-color: transparent;
+  border: none;
+  margin: auto;
+  font-size: 1.2em;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-bottom: thin solid #fff;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.billboard_btn:hover {
+  border-bottom: thin solid var(--main-color);
+}
+
+.cards_container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 20px;
+}

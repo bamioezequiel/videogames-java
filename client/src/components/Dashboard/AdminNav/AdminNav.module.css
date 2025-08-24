@@ -1,0 +1,67 @@
+
+.dashboard_menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 95%;
+  margin: 25px 0;
+  padding: 12px 25px;
+  background-color: var(--color-black);
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard_menu a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dashboard_menu a:hover {
+  background-color: var(--main-color);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.dashboard_menu a.active {
+  background-color: var(--main-color);
+  color: var(--color-black);
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.dashboard_menu a svg {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.dashboard_menu a:hover svg {
+  transform: scale(1.2);
+  color: var(--color-black);
+}
+
+/* Responsive: menú vertical en pantallas pequeñas */
+@media (max-width: 768px) {
+  .dashboard_menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 15px;
+  }
+
+  .dashboard_menu a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

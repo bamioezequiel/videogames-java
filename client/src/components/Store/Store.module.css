@@ -1,0 +1,158 @@
+/* Contenedor principal de la tienda */
+.store_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Lista de juegos */
+.store_list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  padding: 0 15px;
+}
+
+/* Filtros de tienda */
+.store_filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding: 20px 15px;
+  background-color: #f5f5f5;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.store_filter select,
+.store_filter button {
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 160px;
+  outline: none;
+}
+
+.store_filter select:hover,
+.store_filter button:hover {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.store_filter button#reset {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.store_filter button#reset:hover {
+  background-color: #fff;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de paginación y selector de cantidad de juegos */
+.store_pagination_view_container {
+  display: flex;
+  justify-content: center; /* todo a la izquierda */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Selector de cantidad de juegos */
+.viewContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.viewContainer select {
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.viewContainer select:hover {
+  border-color: var(--main-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Paginación */
+.store_pagination {
+  display: flex;
+  gap: 8px;
+}
+
+.store_pagination button {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111;
+  transition: all 0.25s ease;
+}
+
+.store_pagination button:hover {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.store_pagination button.active {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Adaptación a móviles */
+@media (max-width: 768px) {
+  .store_filter {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .store_filter select,
+  .store_filter button {
+    min-width: 90%;
+  }
+
+  .store_pagination_view_container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

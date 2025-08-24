@@ -1,0 +1,196 @@
+.wrapper {
+	display: flex;
+    flex-direction: column;
+    width: calc(10rem + 10vw);
+    height: calc(20.8rem + 10vw);
+    margin: 20px 15px 25px 30px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 20px;
+}
+
+.wrapper:hover {
+	box-shadow: 0 18px 25px rgba(0, 0, 0, 0.45), 0 25px 60px rgba(0, 0, 0, 0.35);
+	transform: translateY(-5px);
+}
+
+.topCard {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	overflow: hidden;
+}
+
+.wrapper_image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: transform 0.3s ease;
+}
+
+.wrapper:hover .wrapper_image {
+	transform: scale(1.05);
+}
+
+.saleBadge {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: #ff4757;
+	color: #fff;
+	padding: 5px 10px;
+	font-weight: bold;
+	border-radius: 50px;
+	font-size: 0.8rem;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.favIconCard, .noFavIconCard {
+	font-size: calc(1.8rem + 0.3vw);
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.favIconCard:hover, .noFavIconCard:hover {
+	transform: scale(1.2);
+}
+
+.outer {
+	position: relative;
+	background-color: #fff;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	padding: 15px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.navlink h2 {
+	color: #111;
+	font-size: 1.2rem;
+	margin: 10px 0;
+	transition: color 0.3s ease;
+}
+
+.navlink:hover h2 {
+	color: var(--main-color);
+}
+
+.cardDescription {
+	font-size: 0.85rem;
+	line-height: 1.4;
+	color: #555;
+	margin: 10px 0 20px 0;
+}
+
+.bg {
+	display: inline-block;
+	color: #fff;
+	background: #ff4757;
+	padding: 4px 10px;
+	margin-bottom: 10px;
+	border-radius: 50px;
+	font-size: 0.7rem;
+	font-weight: bold;
+}
+
+/* Contenedor de botones */
+.button {
+	display: flex;
+	gap: 10px;
+	margin-top: auto;
+}
+
+/* Estilo unificado y elegante para botones */
+.button a,
+.cart_btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 16px;
+	border-radius: 12px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: #111;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hover sutil */
+.button a:hover,
+.cart_btn:hover {
+	background-color: var(--main-color);
+	color: #fff;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+	transform: translateY(-2px);
+}
+
+/* Icono del carrito alineado con texto */
+.cart_icon {
+	margin-right: 6px;
+	font-size: 1rem;
+	transition: transform 0.2s ease-in-out;
+}
+
+.cart_btn:hover .cart_icon {
+	transform: scale(1.1);
+}
+
+/* Precios dentro de los botones */
+.oldPrice {
+	text-decoration: line-through;
+	color: #888;
+	margin-right: 5px;
+	font-size: 0.85rem;
+}
+
+.salePrice {
+	color: var(--main-color);
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+/* Evitar que el hover del botón afecte el color del precio */
+.button a .oldPrice,
+.cart_btn .oldPrice {
+	color: #888; /* mantiene el color definido originalmente */
+}
+
+.button a:hover .salePrice,
+.cart_btn:hover .salePrice {
+	color: #fff; /* o #888 / var(--main-color) según convenga */
+}
+
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+	.button {
+		flex-direction: column;
+		gap: 8px;
+	}
+	.button a,
+	.cart_btn {
+		width: 100%;
+		justify-content: center;
+	}
+}
+.cart_icon {
+	font-size: 1rem;
+}

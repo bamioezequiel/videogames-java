@@ -1,0 +1,106 @@
+.about_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background-color: #fff; /* Fondo blanco */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111;
+}
+
+.section_title {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #ff8c00; /* Color gamer destacado */
+}
+
+.about_text {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.social_card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #101010;
+  color: #fff;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+  text-decoration: none;
+}
+
+.social_card:hover {
+  background-color: #ff8c00;
+  transform: translateY(-3px);
+}
+
+.social_icon {
+  font-size: 1.5rem;
+}
+
+.social_label {
+  font-weight: 600;
+}
+
+.contact_section {
+  margin-top: 50px;
+}
+
+.contact_text {
+  margin-bottom: 15px;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact_input,
+.contact_textarea {
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.contact_input:focus,
+.contact_textarea:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 10px rgba(255,140,0,0.3);
+}
+
+.contact_textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact_btn {
+  background-color: #ff8c00;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.contact_btn:hover {
+  background-color: #e67600;
+  transform: translateY(-2px);
+}
