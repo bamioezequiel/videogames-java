@@ -197,6 +197,10 @@ h3 {
 
 /* Tablets y pantallas medianas */
 @media (max-width: 900px) {
+  .orderDetail_container {
+    padding-bottom: 20px;
+  }
+  
   .order_summary {
     flex-direction: column;
   }
@@ -225,6 +229,7 @@ h3 {
 @media (max-width: 500px) {
   .orderDetail_container {
     padding: 20px 15px;
+    padding-bottom: 20px;
     width: 95%;
   }
 
