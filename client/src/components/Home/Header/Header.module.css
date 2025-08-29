@@ -40,7 +40,7 @@
   }
 
   .header_logo {
-    height: 100px; /* visible y proporcional */
+    height: 100px;
     max-width: 90%;
   }
 }
